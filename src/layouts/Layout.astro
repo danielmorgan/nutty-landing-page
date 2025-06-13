@@ -17,7 +17,9 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-forest-500">
-    <div class="bg-[url(/images/pattern-green.png)] p-5">
+    <div
+      class="bg-[url(/images/pattern-green.png)] bg-repeat animate-diagonal-scroll p-5"
+    >
       <div class="container mx-auto bg-white rounded-2xl relative">
         <Header />
         <slot />

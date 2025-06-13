@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 @theme {
+  /* Remove breakpoints */
+  --breakpoint-xl: initial;
+  --breakpoint-2xl: initial;
+
   --font-display: "Quicksand Variable", "sans-serif";
   --font-sans: "Barlow", "sans-serif";
 
@@ -31,4 +35,18 @@ h2 {
 
 p {
   font-size: var(--text-base);
+}
+
+/* Diagonal scrolling background animation */
+@keyframes diagonal-scroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 128px 128px;
+  }
+}
+
+.animate-diagonal-scroll {
+  animation: diagonal-scroll 10s linear infinite;
 }
