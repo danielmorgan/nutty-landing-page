@@ -3,29 +3,30 @@ import type { HTMLAttributes } from "astro/types";
 import { cn } from "../utils/cn";
 import { cva, type VariantProps } from "class-variance-authority";
 
-const button = cva(
-  [
-    "inline-block rounded-full",
-    "font-display font-bold",
-    "px-5 py-2",
-    "text-lg",
-  ],
-  {
-    variants: {
-      intent: {
-        cta: ["bg-nutty-500", "text-white"],
-      },
+const button = cva(["inline-block rounded-full", "font-display font-bold"], {
+  variants: {
+    intent: {
+      secondary: ["px-5 py-2", "text-lg"],
+      cta: ["px-7 py-3", "text-xl", "shadow-stacked"],
     },
-  }
-);
+    theme: {
+      nutty: ["bg-nutty-500 text-white"],
+      forest: ["bg-forest-400 text-white"],
+    },
+  },
+  defaultVariants: {
+    intent: "secondary",
+    theme: "nutty",
+  },
+});
 
 export interface Props
   extends HTMLAttributes<"a">,
     VariantProps<typeof button> {}
 
-const { class: className, intent = "cta", href, ...props } = Astro.props;
+const { class: className, intent, theme, href, ...props } = Astro.props;
 ---
 
-<a href={href} {...props} class={cn(button({ intent }), className)}>
+<a href={href} {...props} class={cn(button({ intent, theme }), className)}>
   <slot />
 </a>

@@ -2,6 +2,7 @@
 
 @theme {
   /* Remove breakpoints */
+  --breakpoint-lg: initial;
   --breakpoint-xl: initial;
   --breakpoint-2xl: initial;
 
@@ -63,4 +64,9 @@ p {
 
 .animate-diagonal-scroll-bl {
   animation: diagonal-scroll-bl 15s linear infinite;
+}
+
+.shadow-stacked {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.2),
+    0 16px 24px rgba(0, 0, 0, 0.1);
 }

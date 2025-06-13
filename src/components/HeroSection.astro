@@ -1,0 +1,26 @@
+---
+import ButtonLink from "./ButtonLink.astro";
+---
+
+<div class="text-center max-w-lg mx-auto">
+  <h1 class="text-2xl sm:text-4xl text-pretty text-grey-800">
+    A savings app that's actually fun (and ADHD-friendly)
+  </h1>
+  <h3 class="mt-4 text-lg sm:text-xl text-balance text-grey-800">
+    Stop impulse spending. Ditch boring budgets. Make money click.
+  </h3>
+  <div class="w-auto h-[45vw] max-h-[300px]">
+    <img
+      src="images/nutty-hero.png"
+      alt="Cartoon squirrel wearing a crown and standing on top of a pile of nuts."
+    />
+  </div>
+  <ButtonLink
+    href="#waitlist-modal"
+    intent="cta"
+    theme="forest"
+    class="mt-4 sm:mt-8"
+  >
+    Join Discord for early access
+  </ButtonLink>
+</div>
