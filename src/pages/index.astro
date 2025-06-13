@@ -1,16 +1,24 @@
 ---
-
+import ColorPalette from "../components/ColorPalette.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <ColorPalette />
+
+  <h1 class="text-3xl text-balance">
+    A savings app that's actually fun (and ADHD-friendly)
+  </h1>
+  <h3 class="mt-4 text-lg text-pretty">
+    Stop impulse spending. Ditch boring budgets. Make money click.
+  </h3>
+
+  <img
+    src="images/nutty-hero.png"
+    alt="Cartoon squirrel wearing a crown and standing on top of a pile of nuts."
+  />
+
+  <h2 class="text-3xl text-balance text-center">
+    Turn Money Management into a Game, with a Squirrel by your Side.
+  </h2>
+</Layout>
