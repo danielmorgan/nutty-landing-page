@@ -3,7 +3,7 @@ import "../styles/global.css";
 import "@fontsource-variable/quicksand";
 import "@fontsource/barlow";
 
-import Header from "../components/Header.astro";
+import ViralLoops from "../components/ViralLoops.astro";
 
 const { title } = Astro.props;
 ---
@@ -13,17 +13,16 @@ const { title } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <title>{title}</title>
+
+    <ViralLoops />
   </head>
   <body class="bg-forest-500">
     <div
-      class="bg-[url(/images/pattern-green-debug.png)] bg-size-[auto_96px] sm:bg-size-[auto_128px] bg-repeat animate-diagonal-scroll p-2.5 sm:p-5 min-h-screen"
+      class="bg-[url(/images/pattern-green.png)] bg-size-[auto_96px] sm:bg-size-[auto_128px] bg-repeat animate-diagonal-scroll-br p-3 sm:p-5 min-h-screen flex flex-col"
     >
-      <div class="container mx-auto bg-white rounded-2xl relative">
-        <Header />
-        <slot />
-      </div>
+      <slot />
     </div>
   </body>
 </html>

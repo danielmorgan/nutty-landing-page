@@ -2,7 +2,13 @@
 import ButtonLink from "./ButtonLink.astro";
 ---
 
-<div class="flex items-center justify-between py-4">
-  <img src="images/logo.png" alt="Rule logo" class="h-8" />
-  <ButtonLink>Join</ButtonLink>
+<div class="flex flex-wrap gap-4 items-center justify-between">
+  <img
+    src="images/logo-icon.png"
+    alt="Rule logo"
+    class="h-10 sm:h-12 mx-auto sm:mx-0"
+  />
+  <ButtonLink href="#waitlist-modal" class="hidden sm:inline-block">
+    Join Discord
+  </ButtonLink>
 </div>

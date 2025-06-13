@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cn } from "../utils/cn";
+
+export interface Props extends HTMLAttributes<"i"> {
+  icon: string;
+}
+
+const { icon } = Astro.props as Props;
+const { default: innerHTML } = await import(`/src/icons/${icon}.svg?raw`);
+
+const { class: className } = Astro.props;
+---
+
+<i class={cn(className)}>
+  <Fragment set:html={innerHTML} />
+</i>

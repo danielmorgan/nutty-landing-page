@@ -8,6 +8,8 @@
   --font-display: "Quicksand Variable", "sans-serif";
   --font-sans: "Barlow", "sans-serif";
 
+  --color-grey-800: oklch(0.36 0.03 264);
+
   --color-forest-400: oklch(0.62 0.16 142);
   --color-forest-500: oklch(0.53 0.12 142);
   --color-forest-600: oklch(0.41 0.11 142);
@@ -24,7 +26,7 @@ html {
 }
 
 .container {
-  @apply px-4;
+  @apply px-4 sm:px-8;
 }
 
 h1,
@@ -37,7 +39,7 @@ p {
   font-size: var(--text-base);
 }
 
-@keyframes diagonal-scroll {
+@keyframes diagonal-scroll-br {
   0% {
     background-position: 0 0;
   }
@@ -46,6 +48,19 @@ p {
   }
 }
 
-.animate-diagonal-scroll {
-  animation: diagonal-scroll 15s linear infinite;
+@keyframes diagonal-scroll-bl {
+  0% {
+    background-position: 128px -128px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.animate-diagonal-scroll-br {
+  animation: diagonal-scroll-br 15s linear infinite;
+}
+
+.animate-diagonal-scroll-bl {
+  animation: diagonal-scroll-bl 15s linear infinite;
 }
