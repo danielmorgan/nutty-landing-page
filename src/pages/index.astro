@@ -1,24 +1,30 @@
 ---
+import ButtonLink from "../components/ButtonLink.astro";
 import ColorPalette from "../components/ColorPalette.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <ColorPalette />
+  <!-- <ColorPalette /> -->
 
-  <h1 class="text-3xl text-balance">
-    A savings app that's actually fun (and ADHD-friendly)
-  </h1>
-  <h3 class="mt-4 text-lg text-pretty">
-    Stop impulse spending. Ditch boring budgets. Make money click.
-  </h3>
+  <div class="relative z-10">
+    <h1 class="text-3xl text-balance">
+      A savings app that's actually fun (and ADHD-friendly)
+    </h1>
+    <h3 class="mt-4 text-lg text-balance max-w-[60%]">
+      Stop impulse spending. Ditch boring budgets. Make money click.
+    </h3>
+    <ButtonLink href="http://example.com" class="mt-4">Foo</ButtonLink>
+  </div>
 
-  <img
-    src="images/nutty-hero.png"
-    alt="Cartoon squirrel wearing a crown and standing on top of a pile of nuts."
-  />
+  <div class="w-auto h-64 relative z-0 flex justify-around">
+    <img
+      src="images/nutty-hero.png"
+      alt="Cartoon squirrel wearing a crown and standing on top of a pile of nuts."
+    />
+  </div>
 
-  <h2 class="text-3xl text-balance text-center">
+  <h2 class="mt-4 text-2xl text-balance text-center">
     Turn Money Management into a Game, with a Squirrel by your Side.
   </h2>
 </Layout>

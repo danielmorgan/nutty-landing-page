@@ -37,7 +37,6 @@ p {
   font-size: var(--text-base);
 }
 
-/* Diagonal scrolling background animation */
 @keyframes diagonal-scroll {
   0% {
     background-position: 0 0;
@@ -48,5 +47,5 @@ p {
 }
 
 .animate-diagonal-scroll {
-  animation: diagonal-scroll 10s linear infinite;
+  animation: diagonal-scroll 15s linear infinite;
 }
