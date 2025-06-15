@@ -17,12 +17,12 @@ const { id } = Astro.props;
   aria-labelledby={`${id}`}
 >
   <div
-    class="modal-overlay absolute inset-0 bg-[url(/images/pattern-orange.png)] bg-size-[auto_96px] sm:bg-size-[auto_128px] bg-repeat animate-diagonal-scroll-bl cursor-pointer"
+    class="modal-overlay absolute inset-0 bg-[url(/images/pattern-beige.png)] bg-size-[auto_96px] sm:bg-size-[auto_128px] bg-repeat animate-diagonal-scroll-br cursor-pointer"
     aria-hidden="true"
   >
   </div>
   <div
-    class="modal-content p-4 sm:p-8 relative bg-white rounded-xl shadow-2xl max-h-[90vh] w-full max-w-lg transform scale-90 transition-transform duration-300 ease-in-out overflow-hidden flex flex-col"
+    class="modal-content p-4 sm:p-8 pb-0 sm:pb-0 relative bg-white rounded-xl shadow-2xl max-h-[90vh] w-full max-w-lg transform scale-90 transition-transform duration-300 ease-in-out overflow-hidden flex flex-col"
   >
     <a
       href="#"
@@ -36,6 +36,14 @@ const { id } = Astro.props;
 
     <div class="modal-body flex-1 overflow-y-auto">
       <slot />
+    </div>
+
+    <div class="modal-footer flex-1">
+      <img
+        src="/images/nutty-peek.png"
+        alt="Cartoon squirrel peeking up over the bottom of the page"
+        class="h-auto w-3/4 mx-auto"
+      />
     </div>
   </div>
 </div>
