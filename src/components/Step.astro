@@ -1,0 +1,40 @@
+---
+import { cn } from "../utils/cn";
+import StepLabel from "./StepLabel.astro";
+
+const { label, title, illustration, illustrationAlt, flipped } = Astro.props;
+---
+
+<div
+  class={cn(
+    "flex flex-col gap-4 md:flex-row items-center md:items-end",
+    flipped && "md:flex-row-reverse",
+  )}
+>
+  <div class="flex flex-3 flex-col gap-2">
+    <div
+      class="bg-rellow-100 font-display text-blu-500 w-fit rounded-md px-2 py-1 text-sm font-bold tracking-wider uppercase"
+    >
+      {label}
+    </div>
+    <h2 class="text-grey-800 mt-2 text-2xl/6 text-pretty md:text-3xl/8">
+      {title}
+    </h2>
+    <div class="text-grey-800 mt-4 text-lg/7">
+      <slot />
+    </div>
+  </div>
+
+  <div
+    class={cn(
+      "flex flex-2 justify-center md:justify-end",
+      flipped && "md:justify-start",
+    )}
+  >
+    <img
+      src={illustration}
+      alt={illustrationAlt}
+      class="w-3/5 max-w-xs md:w-4/5"
+    />
+  </div>
+</div>

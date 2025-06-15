@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import HeroSection from "../components/HeroSection.astro";
+import StepsSection from "../components/StepsSection.astro";
+import ADHDTraitsSection from "../components/ADHDTraitsSection.astro";
 ---
 
 <Layout>
@@ -15,9 +17,28 @@ import HeroSection from "../components/HeroSection.astro";
 
   <div class="bg-rellow-100 container mx-auto py-8">
     <h2
-      class="bg-rellow-100 text-grey-800 mx-auto max-w-lg text-center text-2xl text-balance"
+      class="text-grey-800 mx-auto max-w-lg text-center text-2xl text-balance"
     >
       Turn Money Management into a Game, with a Squirrel by your Side.
     </h2>
+  </div>
+
+  <div class="container mx-auto bg-white py-8">
+    <StepsSection />
+  </div>
+
+  <div class="bg-rellow-100 container mx-auto rounded-b-2xl py-8">
+    <div class="text-grey-800 mx-auto max-w-lg text-center">
+      <h2 class="text-2xl text-balance">Rule is ADHD-friendly</h2>
+      <h3 class="mt-4 text-lg text-balance sm:text-xl">
+        Whether you're diagnosed, self-identified, waiting for assessment, or
+        just relate to some ADHD features&mdash;Rule makes money feel natural
+        and fun.
+      </h3>
+    </div>
+
+    <div class="mt-8">
+      <ADHDTraitsSection />
+    </div>
   </div>
 </Layout>
