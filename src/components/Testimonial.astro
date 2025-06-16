@@ -8,6 +8,9 @@ const { stars, author, photo, class: className } = Astro.props;
 <div
   class={cn(
     "flex flex-col justify-between gap-8 rounded-xl p-4 md:p-6 relative filter-drop-shadow-solid-offset",
+    stars > 3
+      ? "from-blu-500 bg-gradient-to-tl to-blue-400"
+      : "from-black bg-gradient-to-tl to-grey-800",
     className,
   )}
 >
@@ -32,7 +35,10 @@ const { stars, author, photo, class: className } = Astro.props;
     <p class="text-2xl font-semibold text-white">{author}</p>
   </div>
   <div
-    class="absolute right-4 -bottom-2.5 h-6 w-6 -translate-x-1/2 rotate-45 rounded-sm bg-inherit"
+    class={cn(
+      "absolute right-4 -bottom-2.5 h-6 w-6 -translate-x-1/2 rotate-45 rounded-sm bg-inherit",
+      stars > 3 ? "bg-blu-500" : "bg-black",
+    )}
   >
   </div>
 </div>
