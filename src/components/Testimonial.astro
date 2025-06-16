@@ -7,36 +7,44 @@ const { stars, author, photo, class: className } = Astro.props;
 
 <div
   class={cn(
-    "flex flex-col justify-between gap-8 rounded-xl p-4 md:p-6 relative filter-drop-shadow-solid-offset",
-    stars > 3
-      ? "from-blu-500 bg-gradient-to-tl to-blue-400"
-      : "from-black bg-gradient-to-tl to-grey-800",
+    "flex flex-col justify-between rounded-xl p-4 md:p-6 relative filter-drop-shadow-solid-offset",
     className,
   )}
 >
-  <div class="flex flex-col gap-4">
-    <div class="flex gap-2 text-white">
-      {
-        Array.from({ length: stars }, () => (
-          <Icon icon="star" class="h-6 w-6" />
-        ))
-      }
-    </div>
-    <p class="text-lg text-white">
-      <slot />
-    </p>
+  <div
+    class={cn(
+      "absolute inset-0 z-10 rounded-xl",
+      stars > 3
+        ? "from-blu-500 bg-gradient-to-tl to-blue-400"
+        : "from-black bg-gradient-to-tl to-grey-800",
+    )}
+  >
   </div>
-  <div class="flex w-full items-end gap-4">
-    <img
-      src={photo}
-      alt="Photo of person leaving testimonial"
-      class="h-12 w-auto rounded-lg"
-    />
-    <p class="text-2xl font-semibold text-white">{author}</p>
+  <div class="relative z-20 flex flex-col gap-8">
+    <div class="flex flex-col gap-4">
+      <div class="flex gap-2 text-white">
+        {
+          Array.from({ length: stars }, () => (
+            <Icon icon="star" class="h-6 w-6" />
+          ))
+        }
+      </div>
+      <p class="text-lg text-white">
+        <slot />
+      </p>
+    </div>
+    <div class="flex w-full items-end gap-4">
+      <img
+        src={photo}
+        alt="Photo of person leaving testimonial"
+        class="h-12 w-auto rounded-lg"
+      />
+      <p class="text-2xl font-semibold text-white">{author}</p>
+    </div>
   </div>
   <div
     class={cn(
-      "absolute right-4 -bottom-2.5 h-6 w-6 -translate-x-1/2 rotate-45 rounded-sm bg-inherit",
+      "absolute right-4 -bottom-2.5 h-6 w-6 -translate-x-1/2 rotate-45 rounded-sm bg-inherit z-0",
       stars > 3 ? "bg-blu-500" : "bg-black",
     )}
   >
