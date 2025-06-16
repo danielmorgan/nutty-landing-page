@@ -2,6 +2,7 @@
 
 @theme {
   /* Remove breakpoints */
+  --breakpoint-lg: initial;
   --breakpoint-xl: initial;
   --breakpoint-2xl: initial;
 

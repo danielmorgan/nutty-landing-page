@@ -1,5 +1,6 @@
 ---
 import ButtonLink from "./ButtonLink.astro";
+import Icon from "./Icon.astro";
 ---
 
 <div class="mx-auto max-w-lg text-center">
@@ -9,18 +10,19 @@ import ButtonLink from "./ButtonLink.astro";
   <h3 class="text-grey-800 mt-4 text-lg text-balance sm:text-xl">
     Stop impulse spending. Ditch boring budgets. Make money click.
   </h3>
-  <div class="h-[45vw] max-h-[300px] w-auto">
-    <img
-      src="images/nutty-hero.png"
-      alt="Cartoon squirrel wearing a crown and standing on top of a pile of nuts."
-    />
-  </div>
+
   <ButtonLink
     href="#waitlist-modal"
-    intent="cta"
-    theme="forest"
-    class="mt-4 sm:mt-8"
+    class="mx-auto mt-6 hidden items-center justify-center gap-2 text-center sm:inline-flex"
   >
-    Join Discord for early access
+    <Icon icon="discord" class="hidden sm:inline-block" />
+    <div class="truncate whitespace-nowrap">Join Discord for early access</div>
   </ButtonLink>
+</div>
+
+<div class="mx-auto -mb-[90px] max-w-[500px]">
+  <img
+    src="images/nutty-hero.png"
+    alt="Cartoon squirrel wearing a crown and standing on top of a pile of nuts."
+  />
 </div>

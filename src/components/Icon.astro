@@ -12,6 +12,6 @@ const { default: innerHTML } = await import(`../icons/${icon}.svg?raw`);
 const { class: className } = Astro.props;
 ---
 
-<i class={cn(className)}>
+<i class={cn(className, "fill-current")}>
   <Fragment set:html={innerHTML} />
 </i>

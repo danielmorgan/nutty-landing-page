@@ -5,6 +5,7 @@ import "@fontsource/barlow/400.css";
 import "@fontsource/barlow/600.css";
 
 import ViralLoops from "../components/ViralLoops.astro";
+import { cn } from "../utils/cn";
 
 const { title } = Astro.props;
 ---
@@ -18,10 +19,14 @@ const { title } = Astro.props;
     <title>{title}</title>
 
     <ViralLoops />
+    <!-- tag manager -->
   </head>
   <body class="bg-forest-500">
     <div
-      class="animate-diagonal-scroll-br flex min-h-screen flex-col bg-[url(/images/pattern-green.png)] bg-size-[auto_96px] bg-repeat p-4 sm:bg-size-[auto_128px] sm:p-8"
+      class={cn([
+        "animate-diagonal-scroll-br bg-[url(/images/pattern-green.png)] bg-size-[auto_96px] bg-repeat sm:bg-size-[auto_128px]",
+        "flex min-h-screen flex-col p-8",
+      ])}
     >
       <slot />
     </div>
