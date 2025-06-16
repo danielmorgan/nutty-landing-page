@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import HeroSection from "../components/HeroSection.astro";
 import StepsSection from "../components/StepsSection.astro";
 import ADHDTraitsSection from "../components/ADHDTraitsSection.astro";
+import TestimonialsSection from "../components/TestimonialsSection.astro";
 ---
 
 <Layout>
@@ -23,7 +24,7 @@ import ADHDTraitsSection from "../components/ADHDTraitsSection.astro";
     </h2>
   </div>
 
-  <div class="container mx-auto bg-white py-8">
+  <div class="container mx-auto bg-white py-8 sm:py-16">
     <StepsSection />
   </div>
 
@@ -37,8 +38,9 @@ import ADHDTraitsSection from "../components/ADHDTraitsSection.astro";
       </h3>
     </div>
 
-    <div class="mt-8">
+    <div class="mt-8 flex flex-col gap-8">
       <ADHDTraitsSection />
+      <TestimonialsSection />
     </div>
   </div>
 </Layout>

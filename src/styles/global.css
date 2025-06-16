@@ -2,7 +2,6 @@
 
 @theme {
   /* Remove breakpoints */
-  --breakpoint-lg: initial;
   --breakpoint-xl: initial;
   --breakpoint-2xl: initial;
 
@@ -77,4 +76,7 @@ em {
     0 2px 4px rgba(0, 0, 0, 0.2),
     0 8px 16px rgba(0, 0, 0, 0.2),
     0 16px 24px rgba(0, 0, 0, 0.1);
+}
+.filter-drop-shadow-solid-offset {
+  filter: drop-shadow(5px 7px 0px var(--color-orange-200));
 }

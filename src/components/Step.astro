@@ -26,14 +26,10 @@ const { label, title, illustration, illustrationAlt, flipped } = Astro.props;
 
   <div
     class={cn(
-      "flex flex-2 justify-center md:justify-end",
+      "flex flex-2 justify-center md:justify-end px-4",
       flipped && "md:justify-start",
     )}
   >
-    <img
-      src={illustration}
-      alt={illustrationAlt}
-      class="w-3/5 max-w-xs md:w-4/5"
-    />
+    <img src={illustration} alt={illustrationAlt} class="w-2/3 md:w-4/5" />
   </div>
 </div>

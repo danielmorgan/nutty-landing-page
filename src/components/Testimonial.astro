@@ -1,0 +1,38 @@
+---
+import { cn } from "../utils/cn";
+import Icon from "./Icon.astro";
+
+const { stars, author, photo, class: className } = Astro.props;
+---
+
+<div
+  class={cn(
+    "flex flex-col justify-between gap-8 rounded-xl p-4 md:p-6 relative filter-drop-shadow-solid-offset",
+    className,
+  )}
+>
+  <div class="flex flex-col gap-4">
+    <div class="flex gap-2 text-white">
+      {
+        Array.from({ length: stars }, () => (
+          <Icon icon="star" class="h-6 w-6" />
+        ))
+      }
+    </div>
+    <p class="text-lg text-white">
+      <slot />
+    </p>
+  </div>
+  <div class="flex w-full items-end gap-4">
+    <img
+      src={photo}
+      alt="Photo of person leaving testimonial"
+      class="h-12 w-auto rounded-lg"
+    />
+    <p class="text-2xl font-semibold text-white">{author}</p>
+  </div>
+  <div
+    class="absolute right-4 -bottom-2.5 h-6 w-6 -translate-x-1/2 rotate-45 rounded-sm bg-inherit"
+  >
+  </div>
+</div>

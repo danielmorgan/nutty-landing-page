@@ -1,0 +1,41 @@
+---
+import Testimonial from "./Testimonial.astro";
+---
+
+<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+  <Testimonial
+    photo="images/testimonial-1.jpg"
+    author="Sarah, 26"
+    stars={4}
+    class="bg-blu-500"
+  >
+    “I used to avoid checking my accounts because traditional money apps made me
+    feel anxious and judged. Now I look forward to opening Rule each morning to
+    see my squirrel companion and swipe my transactions. It's the first money
+    app that doesn't make me feel guilty about my past mistakes.”
+  </Testimonial>
+
+  <Testimonial
+    photo="images/testimonial-2.jpg"
+    author="Jenny, 37"
+    stars={5}
+    class="bg-blu-500"
+  >
+    “I have ADHD and before discovering Rule, I was stuck at the 'how do I make
+    a budget' stage. The app allows me to track what I'm spending as I sort each
+    payment into wants or needs. It maps patterns to help me notice where I'm
+    spending money that doesn't bring joy or is just an impulse. It's really
+    powerful!”
+  </Testimonial>
+
+  <Testimonial
+    photo="images/testimonial-3.jpg"
+    author="Anonymous, 45"
+    stars={1}
+    class="bg-nutty-500 md:col-span-2"
+  >
+    “The squirrel is really annoying. Like...so annoying. I'm 45, I don't need
+    to be patronised by a squirrel. ADHD not a joke, finance not a joke,
+    squirrel not funny”
+  </Testimonial>
+</div>
