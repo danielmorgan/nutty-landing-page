@@ -1,6 +1,5 @@
 ---
 import { cn } from "../utils/cn";
-import StepLabel from "./StepLabel.astro";
 
 const { label, title, illustration, illustrationAlt, flipped } = Astro.props;
 ---
@@ -13,7 +12,7 @@ const { label, title, illustration, illustrationAlt, flipped } = Astro.props;
 >
   <div class="flex flex-3 flex-col gap-2">
     <div
-      class="bg-rellow-100 font-display text-blu-500 w-fit rounded-md px-2 py-1 text-sm font-bold tracking-wider uppercase"
+      class="font-display text-blu-500 w-fit rounded-md bg-yellow-100 px-2 py-1 text-sm font-bold tracking-wider uppercase"
     >
       {label}
     </div>

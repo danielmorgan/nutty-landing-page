@@ -8,6 +8,10 @@
   --font-display: "Quicksand Variable", "sans-serif";
   --font-sans: "Barlow", "sans-serif";
 
+  /* --color-*: initial; */
+
+  --color-white: #fff;
+
   --color-grey-800: oklch(0.36 0.03 264);
 
   --color-forest-400: oklch(0.62 0.16 142);
@@ -16,9 +20,9 @@
 
   --color-nutty-500: oklch(0.68 0.18 45);
 
-  --color-rellow-100: oklch(0.96 0.05 65);
-  --color-rellow-400: oklch(0.82 0.15 65);
-  --color-rellow-500: oklch(0.76 0.16 65);
+  --color-yellow-100: oklch(0.96 0.05 65);
+  --color-yellow-400: oklch(0.82 0.15 65);
+  --color-yellow-500: oklch(0.76 0.16 65);
 
   --color-blu-500: oklch(0.58 0.12 240);
 }
