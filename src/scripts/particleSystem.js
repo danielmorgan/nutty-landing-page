@@ -1,8 +1,9 @@
 // Constants
 const NUM_PARTICLES = 5;
+const KONAMI_NUM_PARTICLES = 100;
 const PARTICLE_LIFESPAN = 3000; // milliseconds
-const PARTICLE_SIZE_MIN = 20; // px
-const PARTICLE_SIZE_MAX = 40; // px
+const PARTICLE_SIZE_MIN = 30; // px
+const PARTICLE_SIZE_MAX = 50; // px
 const GRAVITY = 0.5; // pixels/frame^2
 const HORIZONTAL_DRIFT_MAX = 2; // pixels/frame
 const ROTATION_SPEED_MAX = 5; // degrees/frame
@@ -28,7 +29,7 @@ function createParticleContainer() {
   document.body.appendChild(particleContainer);
 }
 
-function createParticle(startX, startY) {
+function createParticle(startX, startY, initialVy = null) {
   const particle = document.createElement("img");
   particle.src = SPRITE_URL;
   particle.style.position = "absolute";
@@ -43,7 +44,7 @@ function createParticle(startX, startY) {
   particle.style.left = `${x}px`;
   particle.style.top = `${y}px`;
 
-  let vy = Math.random() * -5 - 5; // Initial upward velocity
+  let vy = initialVy !== null ? initialVy : (Math.random() * -5 - 5); // Use provided vy or default
   let vx = (Math.random() - 0.5) * HORIZONTAL_DRIFT_MAX * 2;
   let rotation = Math.random() * 360;
   let rotationSpeed = (Math.random() - 0.5) * ROTATION_SPEED_MAX * 2;
@@ -71,6 +72,7 @@ function createParticle(startX, startY) {
   }
 
   requestAnimationFrame(animate);
+  return particle;
 }
 
 export function triggerAcornRain(event) {
@@ -86,5 +88,20 @@ export function triggerAcornRain(event) {
     setTimeout(() => {
       createParticle(startX, startY);
     }, i * 50); // Stagger particle creation
+  }
+}
+
+export function triggerKonamiAcornRain() {
+  if (!particleContainer) {
+    createParticleContainer();
+  }
+
+  for (let i = 0; i < KONAMI_NUM_PARTICLES; i++) {
+    setTimeout(() => {
+      // Create particle starting at a random x position at the top of the screen
+      const startX = Math.random() * window.innerWidth;
+      // Start with a small downward velocity to initiate falling
+      createParticle(startX, 0, GRAVITY * Math.random() + 0.1);
+    }, i * 30); // Stagger particle creation slightly less for a denser rain
   }
 }
