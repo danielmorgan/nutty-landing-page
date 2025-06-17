@@ -5,6 +5,7 @@ import HeroSection from "../components/HeroSection.astro";
 import StepsSection from "../components/StepsSection.astro";
 import ADHDTraitsSection from "../components/ADHDTraitsSection.astro";
 import TestimonialsSection from "../components/TestimonialsSection.astro";
+import BottomCTASection from "../components/BottomCTASection.astro";
 ---
 
 <Layout>
@@ -28,7 +29,7 @@ import TestimonialsSection from "../components/TestimonialsSection.astro";
     <StepsSection />
   </div>
 
-  <div class="container mx-auto rounded-b-2xl bg-yellow-100 py-8">
+  <div class="container mx-auto bg-yellow-100 py-8">
     <div class="text-grey-800 mx-auto max-w-lg text-center">
       <h2 class="text-2xl text-balance">Rule is ADHD-friendly</h2>
       <h3 class="mt-4 text-lg text-balance sm:text-xl">
@@ -42,5 +43,23 @@ import TestimonialsSection from "../components/TestimonialsSection.astro";
       <ADHDTraitsSection />
       <TestimonialsSection />
     </div>
+  </div>
+
+  <div class="container mx-auto overflow-hidden bg-white">
+    <BottomCTASection />
+  </div>
+
+  <div
+    class="bg-forest-400 container mx-auto flex items-center justify-between py-4 sm:py-8"
+  >
+    <p class="text-xl text-white">Footer</p>
+    <p class="text-xl text-white">Footer</p>
+  </div>
+
+  <div
+    class="bg-forest-600 container mx-auto flex items-center justify-between rounded-b-2xl py-2 sm:py-4"
+  >
+    <p class="text-xl text-white">Footer</p>
+    <p class="text-xl text-white">Footer</p>
   </div>
 </Layout>

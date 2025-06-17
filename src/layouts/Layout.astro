@@ -21,13 +21,15 @@ const { title } = Astro.props;
     <ViralLoops />
     <!-- tag manager -->
   </head>
-  <body class="bg-forest-500">
+  <body class="bg-forest-400">
     <div
       class={cn([
-        "animate-diagonal-scroll-br bg-[url(/images/pattern-green.png)] bg-size-[auto_96px] bg-repeat sm:bg-size-[auto_128px]",
-        "flex min-h-screen flex-col p-8",
+        "fixed inset-0",
+        "animate-diagonal-scroll-br bg-[url(/images/pattern.png)] opacity-25 bg-size-[auto_96px] bg-repeat sm:bg-size-[auto_128px]",
       ])}
     >
+    </div>
+    <div class="relative flex min-h-screen flex-col p-3 sm:p-6">
       <slot />
     </div>
   </body>

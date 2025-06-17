@@ -1,0 +1,56 @@
+---
+import { cn } from "../utils/cn";
+import ButtonLink from "./ButtonLink.astro";
+import Icon from "./Icon.astro";
+const { default: leavesLeft } = await import(
+  "../../public/images/leaves-left.svg?raw"
+);
+const { default: leavesRight } = await import(
+  "../../public/images/leaves-right.svg?raw"
+);
+---
+
+<div class="relative">
+  <div
+    class={cn(
+      "absolute inset-0 -bottom-[80px] z-0 -mx-[170px] flex items-end justify-between",
+      "sm:-bottom-[100px] sm:-mx-[205px]",
+      "md:-bottom-[120px] md:-mx-[140px]",
+      "lg:-bottom-[90px] lg:-mx-[110px]",
+    )}
+  >
+    <i
+      id="leaves-left"
+      class="text-forest-400 fill-current *:h-[200px] *:w-auto sm:*:h-[250px] md:*:h-[300px]"
+    >
+      <Fragment set:html={leavesLeft} />
+    </i>
+    <i
+      id="leaves-right"
+      class="text-forest-400 fill-current *:h-[200px] *:w-auto sm:*:h-[250px] md:*:h-[300px]"
+    >
+      <Fragment set:html={leavesRight} />
+    </i>
+  </div>
+
+  <div
+    class="relative z-10 mx-auto max-w-lg pt-16 pb-24 text-center md:pt-32 md:pb-48"
+  >
+    <h2 class="text-grey-800 titlecase text-2xl text-pretty sm:text-4xl">
+      Say goodby to money anxiety, and hello to your new budgeting buddy!
+    </h2>
+    <h3 class="text-grey-800 mt-4 text-lg text-balance sm:text-xl">
+      Join our Discord for Early Access and get a head start on stress-free
+      budgeting.
+    </h3>
+    <ButtonLink
+      href="#waitlist-modal"
+      class="mx-auto mt-6 inline-flex items-center justify-center gap-2 text-center"
+    >
+      <Icon icon="discord" class="hidden sm:inline-block" />
+      <div class="truncate whitespace-nowrap">
+        Join Discord for early access
+      </div>
+    </ButtonLink>
+  </div>
+</div>

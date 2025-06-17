@@ -32,7 +32,7 @@ html {
 }
 
 .container {
-  @apply px-4 sm:px-8;
+  @apply px-4 md:px-8;
 }
 
 h1,
@@ -54,21 +54,22 @@ em {
   }
 }
 
-@keyframes diagonal-scroll-bl {
+@keyframes pop-up {
   0% {
-    background-position: 128px -128px;
+    transform: translateY(100%);
   }
   100% {
-    background-position: 0 0;
+    transform: translateY(0%);
   }
+}
+
+.animate-pop-up {
+  animation: pop-up 0.35s ease-out 1 forwards;
+  animation-delay: 0.75s;
 }
 
 .animate-diagonal-scroll-br {
   animation: diagonal-scroll-br 15s linear infinite;
-}
-
-.animate-diagonal-scroll-bl {
-  animation: diagonal-scroll-bl 15s linear infinite;
 }
 
 .shadow-stacked {
@@ -79,4 +80,8 @@ em {
 }
 .filter-drop-shadow-solid-offset {
   filter: drop-shadow(5px 7px 0px var(--color-orange-200));
+}
+
+.popup-initial-hidden {
+  transform: translateY(100%);
 }

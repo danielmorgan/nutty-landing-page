@@ -11,8 +11,9 @@ const { id } = Astro.props;
   aria-modal="true"
   aria-labelledby={`${id}`}
 >
+  <div class="bg-nutty-500 fixed inset-0"></div>
   <div
-    class="modal-overlay animate-diagonal-scroll-br absolute inset-0 cursor-pointer bg-[url(/images/pattern-beige.png)] bg-size-[auto_96px] bg-repeat sm:bg-size-[auto_128px]"
+    class="modal-overlay animate-diagonal-scroll-br absolute inset-0 cursor-pointer bg-[url(/images/pattern.png)] bg-size-[auto_96px] bg-repeat opacity-30 sm:bg-size-[auto_128px]"
     aria-hidden="true"
   >
   </div>
@@ -34,11 +35,13 @@ const { id } = Astro.props;
     </div>
 
     <div class="modal-footer flex-1">
-      <img
-        src="/images/nutty-peek.png"
-        alt="Cartoon squirrel peeking up over the bottom of the page"
-        class="mx-auto h-auto w-3/4"
-      />
+      <div id="pop-up" class="popup-initial-hidden">
+        <img
+          src="/images/nutty-peek.png"
+          alt="Cartoon squirrel peeking up over the bottom of the page"
+          class="mx-auto h-auto w-3/4"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -60,21 +63,29 @@ const { id } = Astro.props;
 </style>
 
 <script>
-  // Minimal JavaScript for escape key and outside click functionality
   document.addEventListener("DOMContentLoaded", () => {
+    const popUp = document.querySelector("#pop-up");
     const modals = document.querySelectorAll(".modal");
 
+    const handleHashChange = () => {
+      if (location.hash === "#waitlist-modal") {
+        popUp?.classList.add("animate-pop-up");
+      } else {
+        popUp?.classList.remove("animate-pop-up");
+      }
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    handleHashChange(); // Initial check in case the page loads with the hash
+
+    // Set up close handlers
     modals.forEach((modal) => {
       const overlay = modal.querySelector(".modal-overlay");
-
-      // Close on escape key
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && modal.matches(":target")) {
           window.location.hash = "";
         }
       });
-
-      // Close when clicking overlay
       overlay?.addEventListener("click", () => {
         window.location.hash = "";
       });
