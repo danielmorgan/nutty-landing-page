@@ -7,9 +7,10 @@ const button = cva(["inline-block rounded-full", "font-display font-bold"], {
   variants: {
     size: {
       base: [
-        "transition-all duration-150 ease-in-out",
+        "transition-all duration-150 ease-in",
         "px-5 py-2 text-lg",
         "sm:px-7 sm:py-3 sm:text-xl",
+        "hover:-translate-y-1 hover:shadow-lg",
         "active:opacity-75",
       ],
     },
