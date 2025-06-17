@@ -14,7 +14,7 @@ const { stars, author, photo, class: className } = Astro.props;
   <div
     class={cn(
       "absolute inset-0 z-10 rounded-xl",
-      stars > 3 ? "bg-blu-500" : "bg-black",
+      stars > 2 ? "bg-blu-500" : "bg-grey-800",
     )}
   >
   </div>
@@ -43,7 +43,7 @@ const { stars, author, photo, class: className } = Astro.props;
   <div
     class={cn(
       "absolute right-4 -bottom-2.5 h-6 w-6 -translate-x-1/2 rotate-45 rounded-sm bg-inherit z-0",
-      stars > 3 ? "bg-blu-500" : "bg-black",
+      stars > 2 ? "bg-blu-500" : "bg-grey-800",
     )}
   >
   </div>

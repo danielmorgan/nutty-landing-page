@@ -11,59 +11,61 @@ const year = new Date().getFullYear();
 ---
 
 <Layout title="Rule - Savings App Game">
-  <div class="container mx-auto rounded-t-2xl bg-white pt-8">
-    <Header />
-  </div>
-
-  <div class="container mx-auto bg-white py-8">
-    <HeroSection />
-  </div>
-
-  <div class="container mx-auto bg-yellow-100 py-8">
-    <h2
-      class="text-grey-800 mx-auto max-w-lg text-center text-2xl text-balance"
-    >
-      Turn Money Management into a Game, with a Squirrel by your Side.
-    </h2>
-  </div>
-
-  <div class="container mx-auto bg-white py-8 sm:py-16">
-    <StepsSection />
-  </div>
-
-  <div class="container mx-auto bg-yellow-100 py-16">
-    <div class="text-grey-800 mx-auto max-w-lg text-center">
-      <h2 class="text-2xl text-balance">Rule is ADHD-friendly</h2>
-      <h3 class="mt-4 text-lg text-balance sm:text-xl">
-        Whether you're diagnosed, self-identified, waiting for assessment, or
-        just relate to some ADHD features&mdash;Rule makes money feel natural
-        and fun.
-      </h3>
+  <div class="shadow-stacked mx-auto rounded-2xl p-0">
+    <div class="container mx-auto rounded-t-2xl bg-white pt-8">
+      <Header />
     </div>
 
-    <div class="mt-8 flex flex-col gap-16">
-      <ADHDTraitsSection />
-      <TestimonialsSection />
+    <div class="relative z-0 container mx-auto bg-white py-8">
+      <HeroSection />
     </div>
-  </div>
 
-  <div class="container mx-auto overflow-hidden bg-white">
-    <BottomCTASection />
-  </div>
+    <div class="relative z-10 container mx-auto bg-yellow-100 py-8">
+      <h2
+        class="text-grey-800 mx-auto max-w-lg text-center text-2xl text-balance"
+      >
+        Turn Money Management into a Game, with a Squirrel by your Side.
+      </h2>
+    </div>
 
-  <div class="bg-forest-500 container mx-auto py-8">
-    <FooterSection />
-  </div>
+    <div class="container mx-auto bg-white py-8 sm:py-16">
+      <StepsSection />
+    </div>
 
-  <div class="bg-forest-600 container mx-auto rounded-b-2xl py-2 sm:py-4">
-    <div class="flex items-center justify-between">
-      <p class="text-sm text-white">&copy; Rule Finance Ltd {year}</p>
-      <img
-        id="acorn-sticker-trigger"
-        src="images/acorn-sticker.png"
-        alt="Acorn sticker"
-        class="h-8 cursor-pointer"
-      />
+    <div class="container mx-auto bg-yellow-100 py-16">
+      <div class="text-grey-800 mx-auto max-w-lg text-center">
+        <h2 class="text-2xl text-balance">Rule is ADHD-friendly</h2>
+        <h3 class="mt-4 text-lg text-balance sm:text-xl">
+          Whether you're diagnosed, self-identified, waiting for assessment, or
+          just relate to some ADHD features&mdash;Rule makes money feel natural
+          and fun.
+        </h3>
+      </div>
+
+      <div class="mt-8 flex flex-col gap-16">
+        <ADHDTraitsSection />
+        <TestimonialsSection />
+      </div>
+    </div>
+
+    <div class="container mx-auto overflow-hidden bg-white">
+      <BottomCTASection />
+    </div>
+
+    <div class="bg-forest-500 container mx-auto py-8">
+      <FooterSection />
+    </div>
+
+    <div class="bg-forest-600 container mx-auto rounded-b-2xl py-2 sm:py-4">
+      <div class="flex items-center justify-between">
+        <p class="text-sm text-white">&copy; Rule Finance Ltd {year}</p>
+        <img
+          id="acorn-sticker-trigger"
+          src="images/acorn-sticker.png"
+          alt="Acorn sticker"
+          class="h-8 cursor-pointer"
+        />
+      </div>
     </div>
   </div>
 </Layout>
