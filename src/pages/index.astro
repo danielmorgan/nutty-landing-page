@@ -58,7 +58,21 @@ const year = new Date().getFullYear();
   <div class="bg-forest-600 container mx-auto rounded-b-2xl py-2 sm:py-4">
     <div class="flex items-center justify-between">
       <p class="text-sm text-white">&copy; Rule Finance Ltd {year}</p>
-      <img src="images/acorn-sticker.png" alt="" class="h-8" />
+      <img
+        id="acorn-sticker-trigger"
+        src="images/acorn-sticker.png"
+        alt="Acorn sticker"
+        class="h-8 cursor-pointer"
+      />
     </div>
   </div>
 </Layout>
+
+<script>
+  import { triggerAcornRain } from "../scripts/particleSystem.js";
+
+  const acornSticker = document.getElementById("acorn-sticker-trigger");
+  if (acornSticker) {
+    acornSticker.addEventListener("click", triggerAcornRain);
+  }
+</script>

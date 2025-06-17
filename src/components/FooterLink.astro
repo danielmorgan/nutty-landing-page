@@ -15,7 +15,9 @@ const {
     href={href}
     class={cn(
       "text-base text-white/90 font-medium",
-      !disabled ? "hover:opacity-75" : "opacity-75 pointer-events-none",
+      !disabled
+        ? "hover:text-white hover:underline"
+        : "opacity-75 pointer-events-none",
       className,
     )}
   >
