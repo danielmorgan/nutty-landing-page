@@ -1,0 +1,89 @@
+---
+import FooterLink from "./FooterLink.astro";
+---
+
+<div>
+  <div>
+    <img src="images/logo-light-icon.png" alt="Acorn sticker" class="h-8" />
+    <p class="mt-2 text-sm text-white">
+      Rule Finance Ltd is a company in England &amp; Wales, company number
+      14767395. Rule Finance Ltd is acting as an agent of TrueLayer, who is
+      providing the regulated Account Information Service, and is Authorised and
+      Regulated by the Financial Conduct Authority under the Payment Services
+      Regulations 2017 and the Electronic Money Regulations 2011 (Firm Reference
+      Number: 901096)
+    </p>
+  </div>
+
+  <div class="mt-6 grid grid-cols-1 gap-8 md:grid-cols-3">
+    <div class="col-span-1">
+      <h3 class="text-lg font-semibold text-balance text-white">Rule App</h3>
+
+      <ul class="mt-3 flex flex-col gap-3">
+        <FooterLink href="https://discord.gg/z6yw6UNA4U" text="Discord" />
+        <FooterLink
+          text="Install on Android"
+          subtext="(Coming soon)"
+          disabled
+        />
+        <FooterLink text="Install on iPhone" subtext="(Coming soon)" disabled />
+        <FooterLink
+          href="https://app.rulemoney.co.uk?ref=nutty-landing-page-jun2025"
+          text="Legacy app"
+          subtext="(Existing users only)"
+        />
+      </ul>
+    </div>
+
+    <div class="col-span-1">
+      <h3 class="text-lg font-semibold text-balance text-white">Socials</h3>
+
+      <ul class="mt-3 flex flex-col gap-3">
+        <FooterLink
+          href="https://blog.rulemoney.co.uk?ref=nutty-landing-page-jun2025"
+          text="ADHD & Money Blog"
+        />
+        <FooterLink
+          href="https://www.facebook.com/groups/rulemoneyuk"
+          text="Facebook Community"
+        />
+        <FooterLink
+          href="https://www.tiktok.com/@rulemoneyuk"
+          text="TikTok @rulemoneyuk"
+        />
+        <FooterLink
+          href="https://www.youtube.com/@rulemoneyuk"
+          text="YouTube @rulemoneyuk"
+        />
+        <FooterLink
+          href="https://www.instagram.com/rulemoneyuk/"
+          text="Instagram @rulemoneyuk"
+        />
+        <FooterLink
+          href="https://twitter.com/rulemoneyuk"
+          text="Twitter @rulemoneyuk"
+        />
+      </ul>
+    </div>
+
+    <div class="col-span-1">
+      <h3 class="text-lg font-semibold text-balance text-white">Resources</h3>
+
+      <ul class="mt-3 flex flex-col gap-3">
+        <FooterLink href="mailto:hello@rulemoney.co.uk" text="Email us" />
+        <FooterLink
+          href="https://classic-krypton-604.notion.site/Rule-Terms-of-Service-ad88db8ad8314380a35795ae9cae9073"
+          text="Terms of Service"
+        />
+        <FooterLink
+          href="https://classic-krypton-604.notion.site/Privacy-Policy-0ab3dac6080a42d7b8fb9803cb39678e?pvs=4"
+          text="Privacy Policy"
+        />
+        <FooterLink
+          href="https://register.fca.org.uk/s/firm?id=0014G00003CG3mdQAD"
+          text="FCA"
+        />
+      </ul>
+    </div>
+  </div>
+</div>

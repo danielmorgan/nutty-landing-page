@@ -21,13 +21,13 @@ const { default: leavesRight } = await import(
   >
     <i
       id="leaves-left"
-      class="text-forest-400 fill-current *:h-[200px] *:w-auto sm:*:h-[250px] md:*:h-[300px]"
+      class="text-forest-500 fill-current *:h-[200px] *:w-auto sm:*:h-[250px] md:*:h-[300px]"
     >
       <Fragment set:html={leavesLeft} />
     </i>
     <i
       id="leaves-right"
-      class="text-forest-400 fill-current *:h-[200px] *:w-auto sm:*:h-[250px] md:*:h-[300px]"
+      class="text-forest-500 fill-current *:h-[200px] *:w-auto sm:*:h-[250px] md:*:h-[300px]"
     >
       <Fragment set:html={leavesRight} />
     </i>
@@ -47,10 +47,11 @@ const { default: leavesRight } = await import(
       href="#waitlist-modal"
       class="mx-auto mt-6 inline-flex items-center justify-center gap-2 text-center"
     >
-      <Icon icon="discord" class="hidden sm:inline-block" />
+      <Icon icon="discord" />
       <div class="truncate whitespace-nowrap">
-        Join Discord for early access
+        Join Discord <span class="hidden sm:inline">for early access</span>
       </div>
     </ButtonLink>
+    <p class="mt-2 text-sm text-gray-500">Chat with 50+ members</p>
   </div>
 </div>

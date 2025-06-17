@@ -6,6 +6,8 @@ import StepsSection from "../components/StepsSection.astro";
 import ADHDTraitsSection from "../components/ADHDTraitsSection.astro";
 import TestimonialsSection from "../components/TestimonialsSection.astro";
 import BottomCTASection from "../components/BottomCTASection.astro";
+import FooterSection from "../components/FooterSection.astro";
+const year = new Date().getFullYear();
 ---
 
 <Layout>
@@ -49,17 +51,14 @@ import BottomCTASection from "../components/BottomCTASection.astro";
     <BottomCTASection />
   </div>
 
-  <div
-    class="bg-forest-400 container mx-auto flex items-center justify-between py-4 sm:py-8"
-  >
-    <p class="text-xl text-white">Footer</p>
-    <p class="text-xl text-white">Footer</p>
+  <div class="bg-forest-500 container mx-auto py-8">
+    <FooterSection />
   </div>
 
-  <div
-    class="bg-forest-600 container mx-auto flex items-center justify-between rounded-b-2xl py-2 sm:py-4"
-  >
-    <p class="text-xl text-white">Footer</p>
-    <p class="text-xl text-white">Footer</p>
+  <div class="bg-forest-600 container mx-auto rounded-b-2xl py-2 sm:py-4">
+    <div class="flex items-center justify-between">
+      <p class="text-sm text-white">&copy; Rule Finance Ltd {year}</p>
+      <img src="images/acorn-sticker.png" alt="" class="h-8" />
+    </div>
   </div>
 </Layout>
