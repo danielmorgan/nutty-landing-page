@@ -1,4 +1,5 @@
 ---
+import { SEO } from "astro-seo";
 import "../styles/global.css";
 import "@fontsource-variable/quicksand";
 import "@fontsource/barlow/400.css";
@@ -11,6 +12,13 @@ import GtmBody from "../components/GtmBody.astro";
 import Posthog from "../components/Posthog.astro";
 
 const { title } = Astro.props;
+
+const resolvedImageWithDomain = new URL(
+  "/opengraph.png",
+  Astro.site,
+).toString();
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <html lang="en">
@@ -20,6 +28,27 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <title>{title}</title>
+
+    <SEO
+      title={title}
+      description="A savings app that's actually fun (and ADHD-friendly). Stop impulse spending. Ditch boring budgets. Make money click."
+      canonical={canonicalURL}
+      twitter={{
+        site: "@rulemoneyuk",
+        card: "summary_large_image",
+      }}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: `Rule - Savings App Game`,
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: "Rule Homepage Screenshot",
+        },
+      }}
+    />
 
     <ViralLoops />
     <GtmHead />

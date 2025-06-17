@@ -10,7 +10,7 @@ import FooterSection from "../components/FooterSection.astro";
 const year = new Date().getFullYear();
 ---
 
-<Layout>
+<Layout title="Rule - Savings App Game">
   <div class="container mx-auto rounded-t-2xl bg-white pt-8">
     <Header />
   </div>
@@ -31,7 +31,7 @@ const year = new Date().getFullYear();
     <StepsSection />
   </div>
 
-  <div class="container mx-auto bg-yellow-100 py-8">
+  <div class="container mx-auto bg-yellow-100 py-16">
     <div class="text-grey-800 mx-auto max-w-lg text-center">
       <h2 class="text-2xl text-balance">Rule is ADHD-friendly</h2>
       <h3 class="mt-4 text-lg text-balance sm:text-xl">
@@ -41,7 +41,7 @@ const year = new Date().getFullYear();
       </h3>
     </div>
 
-    <div class="mt-8 flex flex-col gap-8">
+    <div class="mt-8 flex flex-col gap-16">
       <ADHDTraitsSection />
       <TestimonialsSection />
     </div>
