@@ -14,16 +14,21 @@ const { stars, author, photo, class: className } = Astro.props;
   <div
     class={cn(
       "absolute inset-0 z-10 rounded-xl",
-      stars > 2 ? "bg-blu-500" : "bg-grey-800",
+      stars > 2 ? "bg-blu-500" : "bg-grey-600",
     )}
   >
   </div>
   <div class="relative z-20 flex h-full flex-col justify-between gap-8">
     <div class="flex flex-col gap-4">
-      <div class="flex gap-2 text-white">
+      <div class="flex gap-2">
         {
           Array.from({ length: stars }, () => (
-            <Icon icon="star" class="h-6 w-6" />
+            <Icon icon="star" class="h-6 w-6 text-white" />
+          ))
+        }
+        {
+          Array.from({ length: 5-stars }, () => (
+            <Icon icon="star" class="h-6 w-6 text-black opacity-50" />
           ))
         }
       </div>
@@ -43,7 +48,7 @@ const { stars, author, photo, class: className } = Astro.props;
   <div
     class={cn(
       "absolute right-4 -bottom-2.5 h-6 w-6 -translate-x-1/2 rotate-45 rounded-sm bg-inherit z-0",
-      stars > 2 ? "bg-blu-500" : "bg-grey-800",
+      stars > 2 ? "bg-blu-500" : "bg-grey-600",
     )}
   >
   </div>
