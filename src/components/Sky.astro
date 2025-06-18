@@ -1,4 +1,176 @@
-<div class="from-blu-100 relative flex-1 bg-gradient-to-b to-white">
-  <img src="images/cloud-big.svg" class="absolute -top-[40px] -left-[60px]" />
-  <img src="images/cloud-small.svg" class="absolute -top-[0px] -right-[0px]" />
+---
+const { default: cloudBigSvg } = await import(
+  "../../public/images/cloud-big.svg?raw"
+);
+const { default: cloudSmallSvg } = await import(
+  "../../public/images/cloud-small.svg?raw"
+);
+---
+
+<div
+  class="relative h-full w-full flex-1 overflow-hidden bg-gradient-to-b from-blue-200 to-white"
+>
+  <!-- Fixed waving cloud in top left (twice the size) -->
+  <div class="absolute -top-10 -left-14 z-10 md:-top-14">
+    <div
+      class="wave-cloud h-auto w-[320px] animate-[gentleWave_6s_ease-in-out_infinite] sm:w-[min(60vw,360px)] md:w-[min(60vw,480px)]"
+    >
+      <Fragment set:html={cloudBigSvg} />
+    </div>
+  </div>
+
+  <!-- Scrolling clouds behind -->
+  <div
+    class="cloud-scrolling pointer-events-none absolute top-[35%] z-[1] h-full w-full"
+  >
+    <div
+      class="h-auto w-[min(37.5vw,300px)] sm:w-[min(60vw,180px)] md:w-[min(52.5vw,225px)]"
+    >
+      <Fragment set:html={cloudBigSvg} />
+    </div>
+  </div>
+
+  <div
+    class="cloud-scrolling pointer-events-none absolute top-[60%] z-[2] h-full w-full"
+  >
+    <div
+      class="h-auto w-[min(22.5vw,180px)] sm:w-[min(45vw,120px)] md:w-[min(37.5vw,150px)]"
+    >
+      <Fragment set:html={cloudSmallSvg} />
+    </div>
+  </div>
+
+  <div
+    class="cloud-scrolling pointer-events-none absolute top-[25%] z-[1] h-full w-full"
+  >
+    <div
+      class="h-auto w-[min(30vw,240px)] sm:w-[min(52.5vw,150px)] md:w-[min(45vw,195px)]"
+    >
+      <Fragment set:html={cloudBigSvg} />
+    </div>
+  </div>
+
+  <div
+    class="cloud-scrolling pointer-events-none absolute -top-[5%] z-[3] h-full w-full"
+  >
+    <div
+      class="h-auto w-[min(18vw,150px)] sm:w-[min(37.5vw,105px)] md:w-[min(30vw,135px)]"
+    >
+      <Fragment set:html={cloudSmallSvg} />
+    </div>
+  </div>
 </div>
+
+<style>
+  @keyframes gentleWave {
+    0%,
+    100% {
+      transform: translateX(-5px);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+  }
+
+  /* Hide scrolling clouds initially to prevent FOUC */
+  .cloud-scrolling {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+  }
+
+  .cloud-scrolling.initialized {
+    opacity: 1;
+  }
+
+  /* Ensure SVGs fill their containers */
+  .cloud-scrolling svg,
+  .wave-cloud svg {
+    width: 100%;
+    height: auto;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const scrollingClouds = document.querySelectorAll(
+      ".cloud-scrolling",
+    ) as NodeListOf<HTMLElement>;
+
+    // Animation state for each cloud
+    interface CloudState {
+      element: HTMLElement;
+      velocity: number;
+      startTime: number;
+      width: number;
+    }
+
+    const cloudStates: CloudState[] = [];
+    const cloudVelocities = [30, 45, 25, 35]; // pixels per second for 4 clouds
+
+    // Initialize cloud states
+    scrollingClouds.forEach((cloud, index) => {
+      const opacity = 0.5 + Math.random() * 0.4;
+      cloud.style.opacity = opacity.toString();
+
+      const cloudWidth = cloud.offsetWidth;
+      const velocity = cloudVelocities[index];
+
+      // Start clouds for immediate visibility
+      const containerWidth = window.innerWidth;
+      const startPositions = [
+        0,
+        containerWidth * 0.25,
+        containerWidth * 0.5,
+        containerWidth * 0.75,
+      ];
+
+      cloud.style.transform = `translateX(${startPositions[index]}px)`;
+
+      // Show cloud now that it's positioned
+      cloud.classList.add("initialized");
+
+      cloudStates.push({
+        element: cloud,
+        velocity,
+        startTime: performance.now(),
+        width: cloudWidth,
+      });
+    });
+
+    // Single animation loop for all elements
+    function animate(currentTime: number) {
+      const containerWidth = window.innerWidth;
+
+      cloudStates.forEach((state) => {
+        const elapsed = 40000 + currentTime - state.startTime;
+        const totalCycleDistance = containerWidth + state.width;
+        const duration = (totalCycleDistance / state.velocity) * 1000;
+
+        // Calculate current position in the cycle (0 to 1)
+        const cycleProgress = (elapsed % duration) / duration;
+
+        // Move from left edge (-width) to right edge (containerWidth) and loop
+        const currentPos = -state.width + totalCycleDistance * cycleProgress;
+
+        state.element.style.transform = `translateX(${currentPos}px)`;
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    // Start the single animation loop
+    requestAnimationFrame(animate);
+
+    // Handle window resize
+    let resizeTimeout: ReturnType<typeof setTimeout>;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        // Update cloud widths after resize
+        cloudStates.forEach((state) => {
+          state.width = state.element.offsetWidth;
+        });
+      }, 250);
+    });
+  });
+</script>
