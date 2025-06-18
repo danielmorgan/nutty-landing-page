@@ -1,23 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
+import Sky from "../components/Sky.astro";
 import HeroSection from "../components/HeroSection.astro";
+import NuttyScene from "../components/NuttyScene.astro";
 import StepsSection from "../components/StepsSection.astro";
 import ADHDTraitsSection from "../components/ADHDTraitsSection.astro";
 import TestimonialsSection from "../components/TestimonialsSection.astro";
 import BottomCTASection from "../components/BottomCTASection.astro";
 import FooterSection from "../components/FooterSection.astro";
+
 const year = new Date().getFullYear();
 ---
 
 <Layout title="Rule: The ADHD Savings App That's Actually Fun">
   <div class="shadow-stacked mx-auto rounded-2xl p-0">
-    <div class="container mx-auto rounded-t-2xl bg-white pt-8">
-      <Header />
+    <div
+      class="relative container mx-auto overflow-hidden rounded-t-2xl bg-white pt-4 md:pt-8"
+    >
+      <div class="absolute inset-0 z-0 flex">
+        <Sky />
+      </div>
+      <div class="relative z-10">
+        <HeroSection />
+      </div>
     </div>
 
-    <div class="relative z-0 container mx-auto bg-white py-8">
-      <HeroSection />
+    <div class="bg-white">
+      <NuttyScene />
     </div>
 
     <div class="relative z-10 container mx-auto bg-yellow-100 py-8">

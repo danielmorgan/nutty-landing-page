@@ -3,26 +3,33 @@ import ButtonLink from "./ButtonLink.astro";
 import Icon from "./Icon.astro";
 ---
 
-<div class="mx-auto max-w-lg text-center">
-  <h1 class="text-grey-800 text-2xl text-pretty sm:text-4xl">
-    A savings app that's actually fun (and ADHD-friendly)
-  </h1>
-  <h3 class="text-grey-800 mt-4 text-lg text-balance sm:text-xl">
-    Stop impulse spending. Ditch boring budgets. Make money click.
-  </h3>
+<div class="flex flex-col gap-8">
+  <div class="flex flex-wrap items-center justify-between gap-4">
+    <img src="images/logo-icon.png" alt="Rule logo" class="h-10 sm:h-12" />
+    <ButtonLink
+      href="#waitlist-modal"
+      class="inline-flex items-center justify-center gap-2 sm:hidden"
+    >
+      <Icon icon="discord" /> Join
+    </ButtonLink>
+  </div>
 
-  <ButtonLink
-    href="#waitlist-modal"
-    class="mx-auto mt-6 hidden items-center justify-center gap-2 text-center sm:inline-flex"
-  >
-    <Icon icon="discord" class="hidden sm:inline-block" />
-    <div class="truncate whitespace-nowrap">Join Discord for early access</div>
-  </ButtonLink>
-</div>
+  <div class="mx-auto max-w-lg text-center">
+    <h1 class="text-grey-800 text-2xl text-pretty sm:text-4xl">
+      A savings app that's actually fun (and ADHD-friendly)
+    </h1>
+    <h3 class="text-grey-800 mt-4 text-lg text-balance sm:text-xl">
+      Stop impulse spending. Ditch boring budgets. Make money click.
+    </h3>
 
-<div class="mx-auto -mb-[90px] max-w-[500px]">
-  <img
-    src="images/nutty-hero.png"
-    alt="Cartoon squirrel wearing a crown and standing on top of a pile of nuts."
-  />
+    <ButtonLink
+      href="#waitlist-modal"
+      class="mx-auto mt-6 hidden items-center justify-center gap-2 text-center sm:inline-flex"
+    >
+      <Icon icon="discord" class="hidden sm:inline-block" />
+      <div class="truncate whitespace-nowrap">
+        Join Discord for early access
+      </div>
+    </ButtonLink>
+  </div>
 </div>

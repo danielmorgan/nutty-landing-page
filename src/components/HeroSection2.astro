@@ -1,0 +1,21 @@
+---
+import ButtonLink from "./ButtonLink.astro";
+import Icon from "./Icon.astro";
+---
+
+<div class="mx-auto max-w-lg text-center">
+  <h1 class="text-grey-800 text-2xl text-pretty sm:text-4xl">
+    A savings app that's actually fun (and ADHD-friendly)
+  </h1>
+  <h3 class="text-grey-800 mt-4 text-lg text-balance sm:text-xl">
+    Stop impulse spending. Ditch boring budgets. Make money click.
+  </h3>
+
+  <ButtonLink
+    href="#waitlist-modal"
+    class="mx-auto mt-6 hidden items-center justify-center gap-2 text-center sm:inline-flex"
+  >
+    <Icon icon="discord" class="hidden sm:inline-block" />
+    <div class="truncate whitespace-nowrap">Join Discord for early access</div>
+  </ButtonLink>
+</div>
