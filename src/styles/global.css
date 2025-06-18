@@ -73,6 +73,20 @@ em {
   animation: diagonal-scroll-br 15s linear infinite;
 }
 
+@keyframes phone-float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+.animate-phone-float {
+  animation: phone-float 6s ease-in-out infinite;
+}
+
 .shadow-stacked {
   box-shadow:
     0 2px 4px rgba(0, 0, 0, 0.2),

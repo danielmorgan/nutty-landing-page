@@ -1,6 +1,7 @@
 ---
 import { cn } from "../utils/cn";
 import ButtonLink from "./ButtonLink.astro";
+import CTAButton from "./CTAButton.astro";
 import Icon from "./Icon.astro";
 const { default: leavesLeft } = await import(
   "../../public/images/leaves-left.svg?raw"
@@ -43,15 +44,16 @@ const { default: leavesRight } = await import(
       Join our Discord for Early Access and get a head start on stress-free
       budgeting.
     </h3>
-    <ButtonLink
-      href="#waitlist-modal"
-      class="mx-auto mt-6 inline-flex items-center justify-center gap-2 text-center"
-    >
-      <Icon icon="discord" />
-      <div class="truncate whitespace-nowrap">
-        Join Discord <span class="hidden sm:inline">for early access</span>
-      </div>
-    </ButtonLink>
+    <CTAButton />
     <p class="mt-2 text-sm text-gray-500">Chat with 50+ members</p>
+
+    <iframe
+      src="https://discord.com/widget?id=1374713397295317104&theme=dark"
+      width="350"
+      height="500"
+      allowtransparency="true"
+      frameborder="0"
+      sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+    ></iframe>
   </div>
 </div>
