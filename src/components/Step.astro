@@ -30,6 +30,10 @@ const { label, title, illustration, illustrationAlt, flipped } = Astro.props;
       flipped && "md:justify-start",
     )}
   >
-    <img src={illustration} alt={illustrationAlt} class="w-2/3 md:w-4/5" />
+    <img
+      src={illustration}
+      alt={illustrationAlt}
+      class="w-4/5 max-w-xs sm:w-full"
+    />
   </div>
 </div>
