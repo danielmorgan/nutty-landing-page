@@ -8,6 +8,7 @@ import ADHDTraitsSection from "../components/ADHDTraitsSection.astro";
 import TestimonialsSection from "../components/TestimonialsSection.astro";
 import BottomCTASection from "../components/BottomCTASection.astro";
 import FooterSection from "../components/FooterSection.astro";
+import BottomCTALeaves from "../components/BottomCTALeaves.astro";
 
 const year = new Date().getFullYear();
 ---
@@ -59,11 +60,14 @@ const year = new Date().getFullYear();
       </div>
     </div>
 
-    <div class="container mx-auto overflow-hidden bg-white">
-      <BottomCTASection />
+    <div class="relative">
+      <BottomCTALeaves />
+      <div class="container mx-auto overflow-hidden bg-white">
+        <BottomCTASection />
+      </div>
     </div>
 
-    <div class="bg-forest-500 container mx-auto py-8">
+    <div class="bg-forest-400 container mx-auto py-8">
       <FooterSection />
     </div>
 

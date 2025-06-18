@@ -1,0 +1,35 @@
+---
+import { cn } from "../utils/cn";
+
+const { default: leavesLeft } = await import(
+  "../../public/images/leaves-left.svg?raw"
+);
+const { default: leavesRight } = await import(
+  "../../public/images/leaves-right.svg?raw"
+);
+---
+
+<div class={cn("absolute inset-0 z-0 flex items-end justify-between")}>
+  <i
+    class={cn(
+      "text-forest-400 fill-current *:w-auto",
+      "*:h-[150px]",
+      "sm:*:h-[200px]",
+      "md:*:h-[220px]",
+      "lg:*:h-[240px]",
+    )}
+  >
+    <Fragment set:html={leavesLeft} />
+  </i>
+  <i
+    class={cn(
+      "text-forest-400 fill-current *:w-auto",
+      "*:h-[150px]",
+      "sm:*:h-[200px]",
+      "md:*:h-[220px]",
+      "lg:*:h-[240px]",
+    )}
+  >
+    <Fragment set:html={leavesRight} />
+  </i>
+</div>
