@@ -1,7 +1,14 @@
 ---
 import { cn } from "../utils/cn";
 
-const { label, title, illustration, illustrationAlt, flipped } = Astro.props;
+const {
+  label,
+  title,
+  illustration,
+  illustrationAlt,
+  flipped,
+  illustrationClass,
+} = Astro.props;
 ---
 
 <div
@@ -33,7 +40,7 @@ const { label, title, illustration, illustrationAlt, flipped } = Astro.props;
     <img
       src={illustration}
       alt={illustrationAlt}
-      class="w-4/5 max-w-xs sm:w-full"
+      class={cn("w-4/5 max-w-xs sm:w-full", illustrationClass)}
     />
   </div>
 </div>
