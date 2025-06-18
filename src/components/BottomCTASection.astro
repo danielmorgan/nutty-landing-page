@@ -1,8 +1,7 @@
 ---
 import { cn } from "../utils/cn";
-import ButtonLink from "./ButtonLink.astro";
 import CTAButton from "./CTAButton.astro";
-import Icon from "./Icon.astro";
+import DiscordWidget from "./DiscordWidget.astro";
 const { default: leavesLeft } = await import(
   "../../public/images/leaves-left.svg?raw"
 );
@@ -45,15 +44,8 @@ const { default: leavesRight } = await import(
       budgeting.
     </h3>
     <CTAButton />
-    <p class="mt-2 text-sm text-gray-500">Chat with 50+ members</p>
-
-    <iframe
-      src="https://discord.com/widget?id=1374713397295317104&theme=dark"
-      width="350"
-      height="500"
-      allowtransparency="true"
-      frameborder="0"
-      sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-    ></iframe>
+    <!-- <div class="mt-4">
+      <DiscordWidget />
+    </div> -->
   </div>
 </div>

@@ -1,0 +1,91 @@
+<div
+  id="discord-widget-container"
+  class="flex flex-row items-center justify-center gap-2"
+>
+  <div id="avatar-container" class="flex -space-x-4 rtl:space-x-reverse">
+    {/* Placeholder for avatars */}
+  </div>
+  <p id="presence-container" class="text-grey-800 text-lg"></p>
+</div>
+
+<script>
+  // Re-declaring interfaces for client-side type safety
+  interface ClientMember {
+    id: string;
+    username: string;
+    discriminator: string;
+    avatar: string | null;
+    status: string;
+    avatar_url: string;
+  }
+
+  interface ClientDiscordWidgetData {
+    id: string;
+    name: string;
+    instant_invite: string | null;
+    channels: {
+      id: string;
+      name: string;
+      position: number;
+    }[];
+    members: ClientMember[];
+    presence_count: number;
+  }
+
+  const WIDGET_URL =
+    "https://discord.com/api/guilds/1374713397295317104/widget.json";
+  const avatarContainer = document.getElementById(
+    "avatar-container",
+  ) as HTMLElement | null;
+  const presenceContainer = document.getElementById(
+    "presence-container",
+  ) as HTMLElement | null;
+
+  async function fetchDiscordData(): Promise<void> {
+    try {
+      const response = await fetch(WIDGET_URL);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = (await response.json()) as ClientDiscordWidgetData;
+      updateWidget(data);
+    } catch (e: unknown) {
+      console.error("Error fetching Discord widget data:", e);
+      let message = "Failed to fetch Discord data";
+      if (e instanceof Error) {
+        message = e.message;
+      }
+    }
+  }
+
+  function updateWidget(data: ClientDiscordWidgetData): void {
+    if (!avatarContainer || !presenceContainer) return;
+
+    // Clear previous avatars
+    avatarContainer.innerHTML = "";
+
+    if (data && data.members && data.members.length > 0) {
+      const shuffledMembers = [...data.members].sort(() => 0.5 - Math.random());
+      const randomMembers = shuffledMembers.slice(0, 3);
+
+      randomMembers.forEach((member, index) => {
+        const img = document.createElement("img");
+        img.className =
+          "h-10 w-10 rounded-full border-2 border-white bg-white shadow";
+        img.src = member.avatar_url;
+        img.alt = member.username;
+        img.style.zIndex = (randomMembers.length - index).toString();
+        avatarContainer.appendChild(img);
+      });
+    }
+
+    if (data && typeof data.presence_count !== "undefined") {
+      presenceContainer.innerHTML = `<span class="font-semibold text-gray-900">${data.presence_count}</span> members online`;
+    } else {
+      presenceContainer.textContent = "Member count unavailable.";
+    }
+  }
+
+  // Fetch data when the script loads
+  fetchDiscordData();
+</script>
