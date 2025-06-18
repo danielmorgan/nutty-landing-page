@@ -1,23 +1,60 @@
+---
+import { cn } from "../utils/cn";
+---
+
 <div
   class="pointer-events-none relative flex overflow-hidden pt-16 select-none sm:overflow-visible"
 >
   <div
-    class="absolute -bottom-[70px] left-0 z-0 w-[500px] sm:-bottom-[100px] sm:w-full md:-bottom-[60px] lg:-bottom-[90px]"
+    class={cn(["absolute z-0 ", "bottom-0 left-0", "w-[540px]", "sm:w-full"])}
   >
     <img src="images/foliage.svg" alt="" class="w-full" />
   </div>
-  <div class="flex grow items-end justify-start">
+  <div class="relative z-10 flex grow items-end justify-start">
     <img
       src="images/nutty-hero.svg"
       alt="Cartoon squirrel wearing a crown and holding acorns in both hands"
-      class="relative bottom-[30px] -left-12 w-[290px] sm:-left-6 sm:w-[330px] md:bottom-[80px] md:w-[380px] lg:bottom-[110px]"
+      class={cn([
+        "relative",
+        "bottom-[75px] -left-12 w-[290px]",
+        "sm:bottom-[75px] sm:-left-6 sm:w-[330px]",
+        "md:bottom-[100px] md:w-[380px]",
+        "lg:bottom-[140px] lg:w-[460px]",
+      ])}
     />
   </div>
-  <div class="flex grow items-end justify-end">
+  <div class="relative z-10 flex grow items-end justify-end">
     <img
       src="images/phone-hero.svg"
       alt="Mobile phone showing today's budget"
-      class="animate-phone-float relative w-[130px] rotate-12 sm:right-12 sm:w-[150px] md:w-[180px] lg:right-20 lg:bottom-10 lg:w-[200px]"
+      class={cn([
+        "animate-phone-float relative rotate-12",
+        "right-8 bottom-6 w-[160px]",
+        "sm:right-14 sm:bottom-10 sm:w-[170px]",
+        "md:right-20 md:w-[200px]",
+        "lg:right-32 lg:bottom-26 lg:w-[240px]",
+      ])}
     />
+  </div>
+  <div
+    class={cn([
+      "absolute z-20",
+      "w-[150px] bottom-0 left-0",
+      "sm:w-[200px]",
+      "md:w-[250px]",
+      "lg:w-[300px]",
+    ])}
+  >
+    <img src="images/leaves-foreground-left.svg" alt="" class="w-full" />
+  </div>
+  <div
+    class={cn([
+      "absolute z-20",
+      "w-[80px] bottom-0 right-0",
+      "sm:w-[120px]",
+      "md:w-[150px]",
+    ])}
+  >
+    <img src="images/leaves-foreground-right.svg" alt="" class="w-full" />
   </div>
 </div>
