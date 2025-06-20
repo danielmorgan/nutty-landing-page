@@ -13,7 +13,7 @@ const {
 
 <div
   class={cn(
-    "flex flex-col gap-4 md:flex-row items-center md:items-end",
+    "flex flex-col gap-4 md:flex-row items-center md:items-top",
     flipped && "md:flex-row-reverse",
   )}
 >
@@ -26,7 +26,7 @@ const {
     <h2 class="text-grey-800 mt-2 text-2xl/6 text-pretty md:text-3xl/8">
       {title}
     </h2>
-    <div class="text-grey-800 mt-4 text-lg/7">
+    <div class="text-grey-800 mt-2 text-lg/7">
       <slot />
     </div>
   </div>
