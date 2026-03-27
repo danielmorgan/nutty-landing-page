@@ -1,27 +1,18 @@
 ---
 import { cn } from "../utils/cn";
 
-const {
-  href = "#",
-  text,
-  subtext,
-  disabled = false,
-  class: className,
-} = Astro.props;
+const { href = "#", text, disabled = false, class: className } = Astro.props;
 ---
 
 <li>
   <a
     href={href}
     class={cn(
-      "text-lg text-white font-medium",
-      !disabled
-        ? "hover:text-white hover:underline"
-        : "opacity-75 pointer-events-none",
+      "text-lg text-grey-warm-950 font-medium py-1 px-2 bg-gold-100 rounded-md",
+      !disabled ? "hover:bg-gold-200/50" : "opacity-75 pointer-events-none",
       className,
     )}
   >
     {text}
-    {subtext && <span class="block text-sm/2">{subtext}</span>}
   </a>
 </li>

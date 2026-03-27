@@ -1,0 +1,50 @@
+---
+import FooterLink from "./FooterLink.astro";
+
+const year = new Date().getFullYear();
+---
+
+<script src="../scripts/easterEggs.js"></script>
+
+<div class="bg-gold-100 p-5">
+  <!-- Links -->
+  <ul class="flex list-none flex-col items-center gap-4">
+    <FooterLink
+      href="https://register.fca.org.uk/s/firm?id=0014G00003CG3mdQAD"
+      text="FCA"
+    />
+    <FooterLink href="mailto:nutty@rulemoney.co.uk" text="Contact" />
+    <FooterLink
+      href="https://blog.rulemoney.co.uk?ref=nutty-landing-page-mar2026"
+      text="Blog"
+    />
+    <FooterLink href="https://discord.gg/z6yw6UNA4U" text="Discord" />
+    <FooterLink href="https://www.tiktok.com/@rulemoneyuk" text="TikTok" />
+    <FooterLink href="https://coda.io/@rule/privacy-policy" text="Privacy" />
+    <FooterLink href="https://coda.io/@rule/terms-of-use" text="Terms" />
+  </ul>
+
+  <div class="mt-8">
+    <p class="text-grey-warm-700 text-sm">
+      Rule Finance Ltd is a company in England &amp; Wales, company number
+      14767395. Rule Finance Ltd is acting as an agent of TrueLayer, who is
+      providing the regulated Account Information Service, and is Authorised and
+      Regulated by the Financial Conduct Authority under the Payment Services
+      Regulations 2017 and the Electronic Money Regulations 2011 (Firm Reference
+      Number: 901096)
+    </p>
+  </div>
+
+  <!-- Bottom of footer -->
+  <div class="mt-5 flex items-center justify-between">
+    <p class="text-grey-warm-950 text-sm">
+      &copy; Rule Finance Ltd {year}
+    </p>
+    <img
+      id="acorn-sticker-trigger"
+      src="images/acorn-sticker.png"
+      alt="Acorn sticker"
+      class="h-8 cursor-pointer"
+    />
+  </div>
+</div>

@@ -2,7 +2,7 @@
 import { SEO } from "astro-seo";
 import "../styles/global.css";
 import "@fontsource-variable/quicksand";
-import "@fontsource/barlow/400.css";
+import "@fontsource/barlow/500.css";
 import "@fontsource/barlow/600.css";
 
 import ViralLoops from "../components/ViralLoops.astro";
@@ -10,6 +10,7 @@ import { cn } from "../utils/cn";
 import GtmHead from "../components/GtmHead.astro";
 import GtmBody from "../components/GtmBody.astro";
 import Posthog from "../components/Posthog.astro";
+import Sky from "../components/Sky.astro";
 
 const { title } = Astro.props;
 
@@ -54,16 +55,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
     <GtmHead />
     <Posthog />
   </head>
-  <body class="bg-forest-200">
+  <body class="bg-blu-50">
     <GtmBody />
-    <div
-      class={cn([
-        "fixed inset-0",
-        "animate-diagonal-scroll-br bg-[url(/images/pattern.png)] opacity-40 bg-repeat",
-      ])}
-    >
+    <div class="absolute inset-0 z-0 flex">
+      /
+      <Sky />
     </div>
-    <div class="relative flex min-h-screen flex-col p-3 sm:p-6">
+
+    <div class="relative flex min-h-screen flex-col">
       <slot />
     </div>
   </body>
