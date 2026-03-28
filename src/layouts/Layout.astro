@@ -5,7 +5,6 @@ import "@fontsource-variable/quicksand";
 import "@fontsource/barlow/500.css";
 import "@fontsource/barlow/600.css";
 
-import ViralLoops from "../components/ViralLoops.astro";
 import { cn } from "../utils/cn";
 import GtmHead from "../components/GtmHead.astro";
 import GtmBody from "../components/GtmBody.astro";
@@ -51,14 +50,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
       }}
     />
 
-    <ViralLoops />
     <GtmHead />
     <Posthog />
   </head>
   <body class="bg-blu-50">
     <GtmBody />
     <div class="absolute inset-0 z-0 flex">
-      /
       <Sky />
     </div>
 

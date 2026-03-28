@@ -6,9 +6,11 @@ const year = new Date().getFullYear();
 
 <script src="../scripts/easterEggs.js"></script>
 
-<div class="bg-gold-100 p-5">
+<div class="bg-gold-100 p-6">
   <!-- Links -->
-  <ul class="flex list-none flex-col items-center gap-4">
+  <ul
+    class="flex list-none flex-col items-center justify-center gap-4 sm:flex-row"
+  >
     <FooterLink
       href="https://register.fca.org.uk/s/firm?id=0014G00003CG3mdQAD"
       text="FCA"
@@ -25,7 +27,7 @@ const year = new Date().getFullYear();
   </ul>
 
   <div class="mt-8">
-    <p class="text-grey-warm-700 text-sm">
+    <p class="text-grey-warm-700 text-xs">
       Rule Finance Ltd is a company in England &amp; Wales, company number
       14767395. Rule Finance Ltd is acting as an agent of TrueLayer, who is
       providing the regulated Account Information Service, and is Authorised and
@@ -36,7 +38,7 @@ const year = new Date().getFullYear();
   </div>
 
   <!-- Bottom of footer -->
-  <div class="mt-5 flex items-center justify-between">
+  <div class="mt-8 flex items-center justify-between">
     <p class="text-grey-warm-950 text-sm">
       &copy; Rule Finance Ltd {year}
     </p>

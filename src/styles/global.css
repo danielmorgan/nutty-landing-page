@@ -2,13 +2,16 @@
 
 @theme {
   /* Remove breakpoints */
-  --breakpoint-xl: initial;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
   --breakpoint-2xl: initial;
 
   --font-display: "Quicksand Variable", "sans-serif";
   --font-sans: "Barlow", "sans-serif";
 
-  /* --color-*: initial; */
+  --color-*: initial;
 
   --color-white: #fff;
 
