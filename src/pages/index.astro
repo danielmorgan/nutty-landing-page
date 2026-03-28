@@ -3,16 +3,21 @@ import AppStoreBadges from "../components/AppStoreBadges.astro";
 import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import Logo from "../components/Logo.astro";
+import Scene from "../components/Scene.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Rule: Turn your money into a game">
   <Logo />
 
-  <Hero />
+  <div class="relative">
+    <Hero />
 
-  <div class="mt-2">
-    <AppStoreBadges />
+    <div class="mt-2">
+      <AppStoreBadges />
+    </div>
+
+    <Scene />
   </div>
 
   <Footer />

@@ -55,11 +55,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
   </head>
   <body class="bg-blu-50">
     <GtmBody />
-    <div class="absolute inset-0 z-0 flex">
+
+    <div class="fixed inset-0 z-0">
       <Sky />
     </div>
 
-    <div class="relative flex min-h-screen flex-col">
+    <div class="relative flex min-h-screen flex-col border">
       <slot />
     </div>
   </body>
