@@ -3,26 +3,39 @@ import AppStoreBadges from "../components/AppStoreBadges.astro";
 import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import Logo from "../components/Logo.astro";
-import Scene from "../components/Scene.astro";
+import SceneDesktop from "../components/SceneDesktop.astro";
+import SceneMobile from "../components/SceneMobile.astro";
+import Sky from "../components/Sky.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Rule: Turn your money into a game">
-  <div class="relative z-0">
-    <div class="relative z-40">
-      <Logo />
-    </div>
-
-    <div class="relative z-40">
-      <Hero />
-    </div>
-
-    <div class="relative z-40 mt-2">
-      <AppStoreBadges />
-    </div>
-
-    <Scene />
+  <div class="bg-blu-50 fixed inset-0 z-10">
+    <Sky />
   </div>
 
-  <Footer />
+  <div class="relative z-20 flex min-h-screen flex-col">
+    <div class="relative z-0">
+      <div class="relative z-40">
+        <Logo />
+      </div>
+
+      <div class="relative z-40">
+        <Hero />
+      </div>
+
+      <div class="relative z-40 mt-2">
+        <AppStoreBadges />
+      </div>
+
+      <div class="md:hidden">
+        <SceneMobile />
+      </div>
+      <div class="hidden md:block">
+        <SceneDesktop />
+      </div>
+    </div>
+
+    <Footer />
+  </div>
 </Layout>

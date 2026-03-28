@@ -5,7 +5,7 @@
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
-  --breakpoint-xl: 80rem;
+  --breakpoint-xl: initial;
   --breakpoint-2xl: initial;
 
   --font-display: "Quicksand Variable", "sans-serif";
@@ -45,6 +45,7 @@
 
   --color-nut-600: #dc6017;
 
+  --color-green-200: #a8d467;
   --color-green-300: #8ac950;
 }
 
@@ -59,7 +60,7 @@ html {
 }
 
 .container {
-  @apply px-4 sm:px-8;
+  @apply px-6 md:px-8;
 }
 
 h1,
