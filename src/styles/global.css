@@ -31,11 +31,6 @@
   --color-green-300: #8ac950;
 }
 
-::selection {
-  background-color: var(--color-blu-100);
-  color: var(--color-blu-500);
-}
-
 html {
   font-family: var(--font-sans);
   font-weight: 500;
