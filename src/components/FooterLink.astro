@@ -8,7 +8,7 @@ const { href = "#", text, disabled = false, class: className } = Astro.props;
   <a
     href={href}
     class={cn(
-      "text-lg text-grey-warm-950 font-medium py-1 px-2 bg-gold-100 rounded-md",
+      "text-lg text-grey-cold-950 font-medium py-1 px-2 bg-gold-100 rounded-md",
       !disabled ? "hover:bg-gold-200/50" : "opacity-75 pointer-events-none",
       className,
     )}
